@@ -67,11 +67,18 @@ class NewAdventureState(State):
         # Begin Button
         # -----------------------------
 
+        self.name_box = pygame.Rect(
+            330,
+            265,
+            620,
+            55
+        )
+
         self.button_rect = pygame.Rect(
-            470,
-            655,
-            340,
-            60
+            330,
+            265,
+            620,
+            55
         )
 
         self.hover_button = False
@@ -102,13 +109,13 @@ class NewAdventureState(State):
 
             elif event.type == pygame.MOUSEBUTTONDOWN:
 
-                if self.hover_button:
+                mouse = pygame.mouse.get_pos()
 
+                if self.name_box.collidepoint(mouse):
+                    self.name_active = True
+                elif self.button_rect.collidepoint(mouse):
                     print("Hero:", self.hero_name)
-                    print(
-                        "Difficulty:",
-                        self.difficulties[self.selected]
-                    )
+                    print("Difficulty:", self.difficulties[self.selected])
 
             # --------------------------
             # Keyboard
@@ -119,7 +126,6 @@ class NewAdventureState(State):
                 # ESC
 
                 if event.key == pygame.K_ESCAPE:
-
                     from src.states.menu_state import MenuState
 
                     self.game.change_state(
@@ -135,21 +141,17 @@ class NewAdventureState(State):
                 if self.name_active:
 
                     if event.key == pygame.K_BACKSPACE:
-
                         self.hero_name = self.hero_name[:-1]
 
                     elif event.key == pygame.K_RETURN:
-
                         self.name_active = False
 
                     else:
-
                         if (
                             event.unicode.isprintable()
                             and len(self.hero_name)
                             < self.max_name_length
                         ):
-
                             self.hero_name += event.unicode
 
                 # ----------------------
@@ -159,25 +161,21 @@ class NewAdventureState(State):
                 else:
 
                     if event.key == pygame.K_UP:
-
                         self.selected -= 1
 
                         if self.selected < 0:
                             self.selected = len(self.difficulties) - 1
 
                     elif event.key == pygame.K_DOWN:
-
                         self.selected += 1
 
                         if self.selected >= len(self.difficulties):
                             self.selected = 0
 
                     elif event.key == pygame.K_TAB:
-
-                        self.name_active = True
+                        self.name_active = not self.name_active
 
                     elif event.key == pygame.K_RETURN:
-
                         print("Hero:", self.hero_name)
                         print(
                             "Difficulty:",
@@ -263,12 +261,7 @@ class NewAdventureState(State):
 
         screen.blit(heading, (330, 220))
 
-        input_box = pygame.Rect(
-            330,
-            265,
-            620,
-            55
-        )
+        input_box = self.name_box
 
         pygame.draw.rect(
             screen,
