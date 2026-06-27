@@ -1,8 +1,7 @@
 import pygame
 
 from src.engine.settings import *
-from src.states.state import State
-
+from src.states.splash_state import SplashState
 
 class Game:
 
@@ -16,7 +15,7 @@ class Game:
 
         self.running = True
 
-        self.state = State(self)
+        self.state = SplashState(self)
 
     def run(self):
 
