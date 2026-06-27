@@ -5,12 +5,25 @@ from src.engine.state import State
 from src.entities.npc import NPCTeacher
 from src.entities.monster import Monster, KingdomBoss
 from src.ui.particle import WeatherOverlay, ParticleSystem
+from src.utils.helpers import get_font, draw_rounded_panel
 
 class ExploreState(State):
     def __init__(self, game):
         super().__init__(game)
         
         self.active_kingdom = "mathematics"
+
+        self.progression_order = [
+                  "mathematics",
+                  "science",
+                  "biology",
+                  "chemistry",
+                  "physics",
+                  "english",
+                  "history",
+                  "geography",
+                  "computer_science"
+]
         
         # Grid dimensions (40x30 grid of 32x32 tiles -> 1280x960 map)
         self.cols = 40
