@@ -65,6 +65,7 @@ class ShopState(State):
     def buy_selected(self):
         player = self.game.player
         item_details = get_item_details(self.selected_item_id)
+        is_equippable = item_details["type"] in ["weapon", "shield", "armor"]
         cost = item_details["cost"]
         
         if player.coins >= cost:
@@ -89,6 +90,7 @@ class ShopState(State):
     def equip_selected(self):
         player = self.game.player
         item_details = get_item_details(self.selected_item_id)
+        is_equippable = item_details["type"] in ["weapon", "shield", "armor"]
         
         # Check if item is in inventory
         inv_item = next((i for i in player.inventory if i["id"] == self.selected_item_id), None)
