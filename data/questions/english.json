@@ -1,0 +1,252 @@
+[
+    {
+        "question": "What part of speech is used to describe a verb, adjective, or another adverb?",
+        "choices": [
+            "Adverb",
+            "Noun",
+            "Pronoun",
+            "Preposition"
+        ],
+        "answer": "Adverb"
+    },
+    {
+        "question": "Which word is an antonym of 'Generous'?",
+        "choices": [
+            "Stingy",
+            "Kind",
+            "Selfless",
+            "Helpful"
+        ],
+        "answer": "Stingy"
+    },
+    {
+        "question": "What spelling is correct for the word meaning 'essential/extremely important'?",
+        "choices": [
+            "Necessary",
+            "Necassary",
+            "Neccessary",
+            "Necesary"
+        ],
+        "answer": "Necessary"
+    },
+    {
+        "question": "Which of these sentences is written in the passive voice?",
+        "choices": [
+            "The cake was baked by Sarah.",
+            "Sarah baked the cake.",
+            "Sarah is baking the cake.",
+            "Sarah will bake a cake."
+        ],
+        "answer": "The cake was baked by Sarah."
+    },
+    {
+        "question": "What is a figure of speech that directly compares two things using 'like' or 'as'?",
+        "choices": [
+            "Simile",
+            "Metaphor",
+            "Personification",
+            "Hyperbole"
+        ],
+        "answer": "Simile"
+    },
+    {
+        "question": "Choose the correct pronoun: 'Neither of the boys brought ___ homework.'",
+        "choices": [
+            "his",
+            "their",
+            "they're",
+            "its"
+        ],
+        "answer": "his"
+    },
+    {
+        "question": "Identify the conjunction in: 'I wanted to walk in the park, but it started raining.'",
+        "choices": [
+            "but",
+            "to",
+            "in",
+            "it"
+        ],
+        "answer": "but"
+    },
+    {
+        "question": "Which literary term refers to the main message or underlying meaning of a story?",
+        "choices": [
+            "Theme",
+            "Plot",
+            "Setting",
+            "Climax"
+        ],
+        "answer": "Theme"
+    },
+    {
+        "question": "What is the term for words that sound the same but have different meanings and spellings?",
+        "choices": [
+            "Homophones",
+            "Synonyms",
+            "Antonyms",
+            "Acronyms"
+        ],
+        "answer": "Homophones"
+    },
+    {
+        "question": "Which spelling is correct?",
+        "choices": [
+            "Receive",
+            "Recieve",
+            "Receve",
+            "Receivee"
+        ],
+        "answer": "Receive"
+    },
+    {
+        "question": "What does the root word 'bene' mean, as in 'beneficial' or 'benevolent'?",
+        "choices": [
+            "Good / Well",
+            "Bad",
+            "Under",
+            "Time"
+        ],
+        "answer": "Good / Well"
+    },
+    {
+        "question": "Identify the verb tense: 'By next week, she will have completed the project.'",
+        "choices": [
+            "Future Perfect",
+            "Future Simple",
+            "Present Perfect",
+            "Past Perfect"
+        ],
+        "answer": "Future Perfect"
+    },
+    {
+        "question": "What is a person, place, thing, or abstract idea called in grammar?",
+        "choices": [
+            "Noun",
+            "Adjective",
+            "Preposition",
+            "Conjunction"
+        ],
+        "answer": "Noun"
+    },
+    {
+        "question": "Which of these is a metaphor?",
+        "choices": [
+            "Time is a thief.",
+            "He was as brave as a lion.",
+            "The leaves danced in the wind.",
+            "I have a million things to do."
+        ],
+        "answer": "Time is a thief."
+    },
+    {
+        "question": "What punctuation mark is used to connect independent clauses without a conjunction?",
+        "choices": [
+            "Semicolon",
+            "Comma",
+            "Colon",
+            "Dash"
+        ],
+        "answer": "Semicolon"
+    },
+    {
+        "question": "What is the term for a word formed by combining and shortening two words, like 'don't'?",
+        "choices": [
+            "Contraction",
+            "Abbreviation",
+            "Acronym",
+            "Prefix"
+        ],
+        "answer": "Contraction"
+    },
+    {
+        "question": "Which word is a synonym for 'Meticulous'?",
+        "choices": [
+            "Precise",
+            "Careless",
+            "Lazy",
+            "Unorganized"
+        ],
+        "answer": "Precise"
+    },
+    {
+        "question": "What figure of speech gives human traits to non-human things?",
+        "choices": [
+            "Personification",
+            "Alliteration",
+            "Onomatopoeia",
+            "Metaphor"
+        ],
+        "answer": "Personification"
+    },
+    {
+        "question": "What is the error in: 'Each of the students are ready.'?",
+        "choices": [
+            "Subject-verb agreement (should be 'is')",
+            "Pronoun error",
+            "Run-on sentence",
+            "Comma splice"
+        ],
+        "answer": "Subject-verb agreement (should be 'is')"
+    },
+    {
+        "question": "What is the name of a group of words that contains a subject and a verb but cannot stand alone?",
+        "choices": [
+            "Dependent Clause",
+            "Independent Clause",
+            "Prepositional Phrase",
+            "Gerund"
+        ],
+        "answer": "Dependent Clause"
+    },
+    {
+        "question": "Which word is spelled correctly?",
+        "choices": [
+            "Accommodation",
+            "Accomodation",
+            "Acommodation",
+            "Acomodation"
+        ],
+        "answer": "Accommodation"
+    },
+    {
+        "question": "What root word means 'life', as in 'biology' or 'biography'?",
+        "choices": [
+            "bio",
+            "geo",
+            "chrono",
+            "tele"
+        ],
+        "answer": "bio"
+    },
+    {
+        "question": "What is the climax of a story plot?",
+        "choices": [
+            "The peak turning point of tension",
+            "The introduction of characters",
+            "The resolution of conflict",
+            "The background explanation"
+        ],
+        "answer": "The peak turning point of tension"
+    },
+    {
+        "question": "Identify the preposition in: 'The keys are under the table.'",
+        "choices": [
+            "under",
+            "are",
+            "the",
+            "table"
+        ],
+        "answer": "under"
+    },
+    {
+        "question": "What term describes the attitude or feeling of a writer conveyed through word choice?",
+        "choices": [
+            "Tone",
+            "Mood",
+            "Genre",
+            "Voice"
+        ],
+        "answer": "Tone"
+    }
+]

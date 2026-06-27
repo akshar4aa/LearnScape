@@ -1,0 +1,252 @@
+[
+    {
+        "question": "Which cell organelle is known as the powerhouse of the cell?",
+        "choices": [
+            "Mitochondria",
+            "Nucleus",
+            "Ribosome",
+            "Chloroplast"
+        ],
+        "answer": "Mitochondria"
+    },
+    {
+        "question": "What green pigment is used by plants to absorb light during photosynthesis?",
+        "choices": [
+            "Chlorophyll",
+            "Carotenoid",
+            "Xanthophyll",
+            "Melanin"
+        ],
+        "answer": "Chlorophyll"
+    },
+    {
+        "question": "Which of the following is responsible for carrying oxygen in blood?",
+        "choices": [
+            "Hemoglobin",
+            "Plasma",
+            "White Blood Cells",
+            "Platelets"
+        ],
+        "answer": "Hemoglobin"
+    },
+    {
+        "question": "What is the primary function of stomata in plant leaves?",
+        "choices": [
+            "Gas Exchange",
+            "Water Absorption",
+            "Nutrient Storage",
+            "Photosynthesis"
+        ],
+        "answer": "Gas Exchange"
+    },
+    {
+        "question": "Which vitamin is synthesized in human skin when exposed to sunlight?",
+        "choices": [
+            "Vitamin D",
+            "Vitamin C",
+            "Vitamin A",
+            "Vitamin E"
+        ],
+        "answer": "Vitamin D"
+    },
+    {
+        "question": "What is the double helix structure inside cells that holds genetic codes?",
+        "choices": [
+            "DNA",
+            "RNA",
+            "Protein",
+            "Chromosome"
+        ],
+        "answer": "DNA"
+    },
+    {
+        "question": "Which chamber of the human heart pumps oxygenated blood to the body?",
+        "choices": [
+            "Left Ventricle",
+            "Right Ventricle",
+            "Left Atrium",
+            "Right Atrium"
+        ],
+        "answer": "Left Ventricle"
+    },
+    {
+        "question": "What is the process of cell division that results in four daughter cells with half chromosomes?",
+        "choices": [
+            "Meiosis",
+            "Mitosis",
+            "Fission",
+            "Budding"
+        ],
+        "answer": "Meiosis"
+    },
+    {
+        "question": "What part of the brain controls balance and muscle coordination?",
+        "choices": [
+            "Cerebellum",
+            "Cerebrum",
+            "Medulla",
+            "Hypothalamus"
+        ],
+        "answer": "Cerebellum"
+    },
+    {
+        "question": "Which organism lacks a defined nucleus in its cell structures?",
+        "choices": [
+            "Bacteria",
+            "Yeast",
+            "Amoeba",
+            "Fern"
+        ],
+        "answer": "Bacteria"
+    },
+    {
+        "question": "What is the primary site of nutrient absorption in the human digestive system?",
+        "choices": [
+            "Small Intestine",
+            "Stomach",
+            "Large Intestine",
+            "Esophagus"
+        ],
+        "answer": "Small Intestine"
+    },
+    {
+        "question": "What type of blood vessel carries blood away from the heart?",
+        "choices": [
+            "Arteries",
+            "Veins",
+            "Capillaries",
+            "Venules"
+        ],
+        "answer": "Arteries"
+    },
+    {
+        "question": "Which hormone regulates blood sugar levels in the human body?",
+        "choices": [
+            "Insulin",
+            "Adrenaline",
+            "Thyroxine",
+            "Estrogen"
+        ],
+        "answer": "Insulin"
+    },
+    {
+        "question": "What term defines organisms that produce their own food?",
+        "choices": [
+            "Autotrophs",
+            "Heterotrophs",
+            "Decomposers",
+            "Carnivores"
+        ],
+        "answer": "Autotrophs"
+    },
+    {
+        "question": "What is the main carbohydrate structural component of plant cell walls?",
+        "choices": [
+            "Cellulose",
+            "Starch",
+            "Glycogen",
+            "Chitin"
+        ],
+        "answer": "Cellulose"
+    },
+    {
+        "question": "Which of these is the largest organ of the human body?",
+        "choices": [
+            "Skin",
+            "Liver",
+            "Lungs",
+            "Brain"
+        ],
+        "answer": "Skin"
+    },
+    {
+        "question": "What is the basic functional unit of the kidney?",
+        "choices": [
+            "Nephron",
+            "Neuron",
+            "Alveoli",
+            "Lobule"
+        ],
+        "answer": "Nephron"
+    },
+    {
+        "question": "Which animal group is characterized by having double-chambered hearts and dry scales?",
+        "choices": [
+            "Reptiles",
+            "Amphibians",
+            "Mammals",
+            "Birds"
+        ],
+        "answer": "Reptiles"
+    },
+    {
+        "question": "What chemical messenger sends impulses across nerve synapses?",
+        "choices": [
+            "Neurotransmitter",
+            "Hormone",
+            "Enzyme",
+            "Antigen"
+        ],
+        "answer": "Neurotransmitter"
+    },
+    {
+        "question": "In genetics, what term refers to having two different alleles for a trait?",
+        "choices": [
+            "Heterozygous",
+            "Homozygous",
+            "Dominant",
+            "Recessive"
+        ],
+        "answer": "Heterozygous"
+    },
+    {
+        "question": "Which gas is released as a byproduct during plant photosynthesis?",
+        "choices": [
+            "Oxygen",
+            "Carbon Dioxide",
+            "Nitrogen",
+            "Water Vapor"
+        ],
+        "answer": "Oxygen"
+    },
+    {
+        "question": "What is the outer protective layer of virus structures called?",
+        "choices": [
+            "Capsid",
+            "Membrane",
+            "Envelope",
+            "Shell"
+        ],
+        "answer": "Capsid"
+    },
+    {
+        "question": "Which blood type is known as the universal recipient?",
+        "choices": [
+            "AB Positive",
+            "O Negative",
+            "A Positive",
+            "B Negative"
+        ],
+        "answer": "AB Positive"
+    },
+    {
+        "question": "What plant vascular tissue is responsible for transporting water upwards?",
+        "choices": [
+            "Xylem",
+            "Phloem",
+            "Cambium",
+            "Cortex"
+        ],
+        "answer": "Xylem"
+    },
+    {
+        "question": "Which bone is the longest and strongest in the human skeleton?",
+        "choices": [
+            "Femur",
+            "Tibia",
+            "Humerus",
+            "Pelvis"
+        ],
+        "answer": "Femur"
+    }
+]

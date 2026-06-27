@@ -1,0 +1,252 @@
+[
+    {
+        "question": "What is the SI unit of Force?",
+        "choices": [
+            "Newton",
+            "Joule",
+            "Watt",
+            "Pascal"
+        ],
+        "answer": "Newton"
+    },
+    {
+        "question": "What is the acceleration due to gravity on Earth's surface? (Approx.)",
+        "choices": [
+            "9.8 m/s^2",
+            "1.6 m/s^2",
+            "3.0 m/s^2",
+            "12.5 m/s^2"
+        ],
+        "answer": "9.8 m/s^2"
+    },
+    {
+        "question": "According to Ohm's Law, what formula relates Voltage (V), Current (I), and Resistance (R)?",
+        "choices": [
+            "V = I * R",
+            "I = V * R",
+            "R = V * I",
+            "V = I / R"
+        ],
+        "answer": "V = I * R"
+    },
+    {
+        "question": "What type of lens curves inward and disperses light rays?",
+        "choices": [
+            "Concave Lens",
+            "Convex Lens",
+            "Planar Lens",
+            "Bifocal Lens"
+        ],
+        "answer": "Concave Lens"
+    },
+    {
+        "question": "What is the speed of light in a vacuum? (Approx.)",
+        "choices": [
+            "300,000 km/s",
+            "150,000 km/s",
+            "1,000,000 km/s",
+            "3,000 km/s"
+        ],
+        "answer": "300,000 km/s"
+    },
+    {
+        "question": "What form of heat transfer occurs through electromagnetic waves?",
+        "choices": [
+            "Radiation",
+            "Conduction",
+            "Convection",
+            "Induction"
+        ],
+        "answer": "Radiation"
+    },
+    {
+        "question": "Which law states that for every action, there is an equal and opposite reaction?",
+        "choices": [
+            "Newton's Third Law",
+            "Newton's First Law",
+            "Newton's Second Law",
+            "Law of Inertia"
+        ],
+        "answer": "Newton's Third Law"
+    },
+    {
+        "question": "What type of energy is stored in an object due to its height position?",
+        "choices": [
+            "Gravitational Potential Energy",
+            "Kinetic Energy",
+            "Thermal Energy",
+            "Chemical Energy"
+        ],
+        "answer": "Gravitational Potential Energy"
+    },
+    {
+        "question": "What frequency range defines sounds that humans cannot hear because they are too high?",
+        "choices": [
+            "Ultrasound (above 20kHz)",
+            "Infrasound (below 20Hz)",
+            "Supersonic",
+            "Megasonic"
+        ],
+        "answer": "Ultrasound (above 20kHz)"
+    },
+    {
+        "question": "What is the SI unit of electrical charge?",
+        "choices": [
+            "Coulomb",
+            "Ampere",
+            "Volt",
+            "Ohm"
+        ],
+        "answer": "Coulomb"
+    },
+    {
+        "question": "What term describes the bending of light rays as they pass from one medium to another?",
+        "choices": [
+            "Refraction",
+            "Reflection",
+            "Diffraction",
+            "Dispersion"
+        ],
+        "answer": "Refraction"
+    },
+    {
+        "question": "What device converts mechanical kinetic energy into electrical energy?",
+        "choices": [
+            "Generator",
+            "Motor",
+            "Transformer",
+            "Capacitor"
+        ],
+        "answer": "Generator"
+    },
+    {
+        "question": "Which of these materials is a good electrical insulator?",
+        "choices": [
+            "Rubber",
+            "Copper",
+            "Iron",
+            "Aluminum"
+        ],
+        "answer": "Rubber"
+    },
+    {
+        "question": "What is the power of a machine that does 500 Joules of work in 5 seconds?",
+        "choices": [
+            "100 Watts",
+            "2500 Watts",
+            "50 Watts",
+            "500 Watts"
+        ],
+        "answer": "100 Watts"
+    },
+    {
+        "question": "What type of wave is sound?",
+        "choices": [
+            "Longitudinal Wave",
+            "Transverse Wave",
+            "Electromagnetic Wave",
+            "Shear Wave"
+        ],
+        "answer": "Longitudinal Wave"
+    },
+    {
+        "question": "What force acts opposite to the direction of motion of sliding objects?",
+        "choices": [
+            "Friction",
+            "Gravity",
+            "Tension",
+            "Centripetal Force"
+        ],
+        "answer": "Friction"
+    },
+    {
+        "question": "What basic subatomic particle comprises a proton in modern particle physics?",
+        "choices": [
+            "Quarks",
+            "Electrons",
+            "Neutrinos",
+            "Photons"
+        ],
+        "answer": "Quarks"
+    },
+    {
+        "question": "What term refers to the resistance of an object to change its state of motion?",
+        "choices": [
+            "Inertia",
+            "Velocity",
+            "Momentum",
+            "Friction"
+        ],
+        "answer": "Inertia"
+    },
+    {
+        "question": "What is the SI unit of Pressure?",
+        "choices": [
+            "Pascal",
+            "Newton",
+            "Bar",
+            "Torr"
+        ],
+        "answer": "Pascal"
+    },
+    {
+        "question": "What is the absolute zero temperature in Celsius? (Approx.)",
+        "choices": [
+            "-273 degrees C",
+            "0 degrees C",
+            "-100 degrees C",
+            "-460 degrees C"
+        ],
+        "answer": "-273 degrees C"
+    },
+    {
+        "question": "What is the term for a material that has zero electrical resistance at low temperatures?",
+        "choices": [
+            "Superconductor",
+            "Semiconductor",
+            "Super-insulator",
+            "Electromagnet"
+        ],
+        "answer": "Superconductor"
+    },
+    {
+        "question": "What type of nuclear reaction powers the Sun?",
+        "choices": [
+            "Nuclear Fusion",
+            "Nuclear Fission",
+            "Radioactive Decay",
+            "Spontaneous Combustion"
+        ],
+        "answer": "Nuclear Fusion"
+    },
+    {
+        "question": "What is the product of mass and velocity of an object?",
+        "choices": [
+            "Momentum",
+            "Force",
+            "Work",
+            "Kinetic Energy"
+        ],
+        "answer": "Momentum"
+    },
+    {
+        "question": "Which of Kepler's laws states that planetary orbits are ellipses?",
+        "choices": [
+            "First Law",
+            "Second Law",
+            "Third Law",
+            "Law of Harmonies"
+        ],
+        "answer": "First Law"
+    },
+    {
+        "question": "What basic instrument is used to measure electrical current?",
+        "choices": [
+            "Ammeter",
+            "Voltmeter",
+            "Galvanometer",
+            "Ohmmeter"
+        ],
+        "answer": "Ammeter"
+    }
+]

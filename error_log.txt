@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "D:\LearnScape\main.py", line 11, in main
+    game.run()
+  File "D:\LearnScape\src\engine\game.py", line 199, in run
+    self.active_state.draw(self.virtual_canvas)
+  File "D:\LearnScape\src\states\splash.py", line 80, in draw
+    sub_surf = self.font.subtitle.render(sub_text, True, (160, 150, 180))
+               ^^^^^^^^^
+AttributeError: 'SplashState' object has no attribute 'font'

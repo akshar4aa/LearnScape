@@ -1,0 +1,252 @@
+[
+    {
+        "question": "Who was the first President of the United States?",
+        "choices": [
+            "George Washington",
+            "Thomas Jefferson",
+            "Abraham Lincoln",
+            "John Adams"
+        ],
+        "answer": "George Washington"
+    },
+    {
+        "question": "What empire was ruled by Julius Caesar?",
+        "choices": [
+            "Roman Empire",
+            "Greek Empire",
+            "Persian Empire",
+            "Ottoman Empire"
+        ],
+        "answer": "Roman Empire"
+    },
+    {
+        "question": "In what year did World War II end?",
+        "choices": [
+            "1945",
+            "1918",
+            "1939",
+            "1950"
+        ],
+        "answer": "1945"
+    },
+    {
+        "question": "Which civilization built the Great Pyramid of Giza?",
+        "choices": [
+            "Ancient Egyptians",
+            "Ancient Romans",
+            "Mesopotamians",
+            "Aztecs"
+        ],
+        "answer": "Ancient Egyptians"
+    },
+    {
+        "question": "What document declared American independence from Great Britain in 1776?",
+        "choices": [
+            "Declaration of Independence",
+            "The Constitution",
+            "Bill of Rights",
+            "Magna Carta"
+        ],
+        "answer": "Declaration of Independence"
+    },
+    {
+        "question": "Who was the famous French female military leader during the Hundred Years' War?",
+        "choices": [
+            "Joan of Arc",
+            "Marie Antoinette",
+            "Catherine the Great",
+            "Queen Elizabeth"
+        ],
+        "answer": "Joan of Arc"
+    },
+    {
+        "question": "Which ancient trade route connected China to the Mediterranean region?",
+        "choices": [
+            "Silk Road",
+            "Amber Road",
+            "Spice Route",
+            "Trans-Saharan Path"
+        ],
+        "answer": "Silk Road"
+    },
+    {
+        "question": "What event sparked the beginning of World War I in 1914?",
+        "choices": [
+            "Assassination of Archduke Franz Ferdinand",
+            "Invasion of Poland",
+            "Sinking of Lusitania",
+            "Treaty of Versailles"
+        ],
+        "answer": "Assassination of Archduke Franz Ferdinand"
+    },
+    {
+        "question": "Who was the leader of the Mongol Empire in the 13th century?",
+        "choices": [
+            "Genghis Khan",
+            "Kublai Khan",
+            "Alexander the Great",
+            "Charlemagne"
+        ],
+        "answer": "Genghis Khan"
+    },
+    {
+        "question": "What document signed in 1215 limited the power of the English King?",
+        "choices": [
+            "Magna Carta",
+            "Mayflower Compact",
+            "Declaration of Rights",
+            "Common Sense"
+        ],
+        "answer": "Magna Carta"
+    },
+    {
+        "question": "Which country did the Renaissance begin in during the 14th century?",
+        "choices": [
+            "Italy",
+            "France",
+            "England",
+            "Spain"
+        ],
+        "answer": "Italy"
+    },
+    {
+        "question": "What was the main purpose of the Berlin Wall built in 1961?",
+        "choices": [
+            "To divide East and West Berlin",
+            "To guard borders from invasion",
+            "To serve as a monument",
+            "To control highway traffic"
+        ],
+        "answer": "To divide East and West Berlin"
+    },
+    {
+        "question": "Who sailed the ocean blue in 1492, landing in the Americas?",
+        "choices": [
+            "Christopher Columbus",
+            "Vasco da Gama",
+            "Ferdinand Magellan",
+            "Amerigo Vespucci"
+        ],
+        "answer": "Christopher Columbus"
+    },
+    {
+        "question": "What civilization constructed the ancient city of Machu Picchu?",
+        "choices": [
+            "Inca Empire",
+            "Aztec Empire",
+            "Mayan Empire",
+            "Toltecs"
+        ],
+        "answer": "Inca Empire"
+    },
+    {
+        "question": "What was the name of the global economic downturn of the 1930s?",
+        "choices": [
+            "The Great Depression",
+            "The Industrial Crash",
+            "The Tulip Mania",
+            "The Inflation Crisis"
+        ],
+        "answer": "The Great Depression"
+    },
+    {
+        "question": "Which US President issued the Emancipation Proclamation in 1863?",
+        "choices": [
+            "Abraham Lincoln",
+            "George Washington",
+            "Andrew Jackson",
+            "Ulysses S. Grant"
+        ],
+        "answer": "Abraham Lincoln"
+    },
+    {
+        "question": "What code of laws was written by an ancient Babylonian king around 1750 BC?",
+        "choices": [
+            "Code of Hammurabi",
+            "Justin Law",
+            "Twelve Tables",
+            "Draconian Code"
+        ],
+        "answer": "Code of Hammurabi"
+    },
+    {
+        "question": "Who was the first female Prime Minister of the United Kingdom?",
+        "choices": [
+            "Margaret Thatcher",
+            "Theresa May",
+            "Queen Victoria",
+            "Angela Merkel"
+        ],
+        "answer": "Margaret Thatcher"
+    },
+    {
+        "question": "What ancient Greek city-state was known for its militaristic society?",
+        "choices": [
+            "Sparta",
+            "Athens",
+            "Thebes",
+            "Corinth"
+        ],
+        "answer": "Sparta"
+    },
+    {
+        "question": "What movement split the Western Church into Catholic and Protestant branches in the 16th century?",
+        "choices": [
+            "Protestant Reformation",
+            "Great Schism",
+            "Counter-Reformation",
+            "Enlightenment"
+        ],
+        "answer": "Protestant Reformation"
+    },
+    {
+        "question": "What was the name of the first artificial satellite launched into space by the USSR in 1957?",
+        "choices": [
+            "Sputnik 1",
+            "Vostok 1",
+            "Apollo 11",
+            "Explorer 1"
+        ],
+        "answer": "Sputnik 1"
+    },
+    {
+        "question": "What revolution overthrew the French monarchy in 1789?",
+        "choices": [
+            "French Revolution",
+            "Glorious Revolution",
+            "Industrial Revolution",
+            "Russian Revolution"
+        ],
+        "answer": "French Revolution"
+    },
+    {
+        "question": "Who wrote the 'I Have a Dream' speech delivered during the 1963 March on Washington?",
+        "choices": [
+            "Martin Luther King Jr.",
+            "Malcolm X",
+            "John F. Kennedy",
+            "Rosa Parks"
+        ],
+        "answer": "Martin Luther King Jr."
+    },
+    {
+        "question": "What ancient empire built the Colosseum in Rome?",
+        "choices": [
+            "Roman Empire",
+            "Byzantine Empire",
+            "Macedonian Empire",
+            "Persian Empire"
+        ],
+        "answer": "Roman Empire"
+    },
+    {
+        "question": "Which country developed the first gunpowder weapons in history?",
+        "choices": [
+            "China",
+            "India",
+            "Egypt",
+            "Greece"
+        ],
+        "answer": "China"
+    }
+]
