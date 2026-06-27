@@ -1,160 +1,108 @@
 import pygame
+import random
 
 from src.states.state import State
 from src.ui.background import Background
-
+from src.ui.progressbar import ProgressBar
+from src.states.world_map_state import WorldMapState
 
 class LoadingState(State):
-
     def __init__(self, game):
         super().__init__(game)
-
         width = self.game.screen.get_width()
         height = self.game.screen.get_height()
-
         self.background = Background(width, height)
 
-        self.title_font = pygame.font.SysFont(
-            "arial",
-            60,
-            bold=True
-        )
+        self.title_font = pygame.font.SysFont("arial", 60, bold=True)
+        self.text_font = pygame.font.SysFont("arial", 28)
+        self.small_font = pygame.font.SysFont("arial", 22)
 
-        self.text_font = pygame.font.SysFont(
-            "arial",
-            28
-        )
+        self.progress = 0.0
+        self.timer = 0.0
+        self.duration = 3.0  # 3 seconds loading
 
-        self.small_font = pygame.font.SysFont(
-            "arial",
-            22
-        )
+        # Educational/gaming loading tips
+        self.tips = [
+            "Tip: Earth contains Mathematics lessons like Fractions and Decimals.",
+            "Tip: Jupiter contains Science lessons including Solar System and Animals.",
+            "Tip: Saturn hosts Coding lessons covering Loops, Functions, and Lists.",
+            "Tip: Streaks in Quiz Battle multiply the XP you receive!",
+            "Tip: Re-complete quizzes to earn extra coins and lock achievements.",
+            "Tip: You can customize your music volume in the Settings menu."
+        ]
+        self.selected_tip = random.choice(self.tips)
 
-        self.progress = 0
-        self.timer = 0
-            # ==========================================
-    # EVENTS
-    # ==========================================
+        # Initialize progress bar
+        self.progress_bar = ProgressBar(290, 380, 700, 35)
 
     def handle_events(self, events):
-
         for event in events:
-
             if event.type == pygame.QUIT:
                 self.game.running = False
-
-    # ==========================================
-    # UPDATE
-    # ==========================================
+                return
 
     def update(self, dt):
-
         self.background.update(dt)
-
         self.timer += dt
 
-        # Fill progress bar over 3 seconds
-        if self.progress < 100:
-            self.progress += dt * 35
+        # Calculate progress fraction
+        self.progress = min(1.0, self.timer / self.duration)
+        self.progress_bar.set_progress(self.progress)
 
-        # Automatically move to World Map
-        if self.timer >= 3:
-            print("Going to World Map")
+        # Automatically transition
+        if self.timer >= self.duration:
+            # First, check if global stats are initialized. If they are not (e.g. first load), initialize them:
+            if not hasattr(self.game, 'hero_name'):
+                self.game.hero_name = "Explorer"
+            if not hasattr(self.game, 'char_type'):
+                self.game.char_type = "Scholar"
+            if not hasattr(self.game, 'xp'):
+                self.game.xp = 0
+            if not hasattr(self.game, 'coins'):
+                self.game.coins = 0
+            if not hasattr(self.game, 'level'):
+                self.game.level = 1
+            if not hasattr(self.game, 'unlocked_planets'):
+                self.game.unlocked_planets = ["Earth"]
+            if not hasattr(self.game, 'completed_lessons'):
+                self.game.completed_lessons = []
+            if not hasattr(self.game, 'achievements'):
+                self.game.achievements = []
 
-            # We'll create this page next
-            from src.states.world_map_state import WorldMapState
+            # Save initial game state if it doesn't exist
+            from src.utils.save_system import SaveSystem
+            save_data = {
+                "hero_name": self.game.hero_name,
+                "char_type": self.game.char_type,
+                "xp": self.game.xp,
+                "coins": self.game.coins,
+                "level": self.game.level,
+                "unlocked_planets": self.game.unlocked_planets,
+                "completed_lessons": self.game.completed_lessons,
+                "achievements": self.game.achievements
+            }
+            SaveSystem.save(save_data)
 
-            self.game.change_state(
-                WorldMapState(self.game)
-            )
-
-    # ==========================================
-    # DRAW
-    # ==========================================
+            self.game.change_state(WorldMapState(self.game))
 
     def draw(self, screen):
-
         self.background.draw(screen)
 
-        # ---------------------------
         # Title
-        # ---------------------------
+        title = self.title_font.render("LearnScape", True, (255, 220, 80))
+        screen.blit(title, title.get_rect(center=(640, 140)))
 
-        title = self.title_font.render(
-            "LearnScape",
-            True,
-            (255, 220, 80)
-        )
+        # Subtitle
+        loading = self.text_font.render("Preparing Your Adventure...", True, (230, 230, 230))
+        screen.blit(loading, loading.get_rect(center=(640, 230)))
 
-        screen.blit(
-            title,
-            title.get_rect(center=(640, 140))
-        )
+        # Progress Bar
+        self.progress_bar.draw(screen)
 
-        # ---------------------------
-        # Loading Text
-        # ---------------------------
+        # Percentage Text
+        percent = self.small_font.render(f"{int(self.progress * 100)}%", True, (255, 255, 255))
+        screen.blit(percent, percent.get_rect(center=(640, 450)))
 
-        loading = self.text_font.render(
-            "Preparing Your Adventure...",
-            True,
-            (230, 230, 230)
-        )
-
-        screen.blit(
-            loading,
-            loading.get_rect(center=(640, 230))
-        )
-
-        # ---------------------------
-        # Progress Bar Background
-        # ---------------------------
-
-        pygame.draw.rect(
-            screen,
-            (45, 45, 65),
-            (290, 380, 700, 35),
-            border_radius=10
-        )
-
-        # Progress
-
-        pygame.draw.rect(
-            screen,
-            (255, 220, 80),
-            (
-                290,
-                380,
-                int(700 * (self.progress / 100)),
-                35
-            ),
-            border_radius=10
-        )
-
-        # Percentage
-
-        percent = self.small_font.render(
-            f"{int(self.progress)}%",
-            True,
-            (255, 255, 255)
-        )
-
-        screen.blit(
-            percent,
-            percent.get_rect(center=(640, 450))
-        )
-
-        # ---------------------------
         # Tip
-        # ---------------------------
-
-        tip = self.small_font.render(
-            "Tip: Practice every day to become a Master!",
-            True,
-            (200, 200, 200)
-        )
-
-        screen.blit(
-            tip,
-            tip.get_rect(center=(640, 650))
-        )
+        tip_surf = self.small_font.render(self.selected_tip, True, (200, 200, 200))
+        screen.blit(tip_surf, tip_surf.get_rect(center=(640, 600)))

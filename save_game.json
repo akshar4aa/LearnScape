@@ -1,0 +1,21 @@
+{
+    "hero_name": "ak",
+    "char_type": "Scholar",
+    "xp": 28,
+    "coins": 75,
+    "level": 4,
+    "unlocked_planets": [
+        "Earth",
+        "Jupiter",
+        "Saturn"
+    ],
+    "completed_lessons": [
+        "Earth_Numbers",
+        "Jupiter_Solar System",
+        "Earth_Addition"
+    ],
+    "achievements": [
+        "First Steps",
+        "Wealthy"
+    ]
+}
