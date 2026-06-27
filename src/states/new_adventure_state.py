@@ -2,22 +2,21 @@ import pygame
 
 from src.states.state import State
 from src.ui.background import Background
-
+from src.states.character_select_state import CharacterSelectState
 
 class NewAdventureState(State):
 
     def __init__(self, game):
         super().__init__(game)
 
+        self.game = game
+
         width = self.game.screen.get_width()
         height = self.game.screen.get_height()
 
         self.background = Background(width, height)
 
-        # -----------------------------
         # Fonts
-        # -----------------------------
-
         self.title_font = pygame.font.SysFont(
             "arial",
             60,
@@ -26,35 +25,21 @@ class NewAdventureState(State):
 
         self.heading_font = pygame.font.SysFont(
             "arial",
-            30,
+            28,
             bold=True
         )
 
         self.text_font = pygame.font.SysFont(
             "arial",
-            26
+            24
         )
 
-        self.small_font = pygame.font.SysFont(
-            "arial",
-            22
-        )
-
-        # -----------------------------
-        # Hero
-        # -----------------------------
-
+        # Hero Name
         self.hero_name = ""
-        self.max_name_length = 12
-
-        # True = typing name
-        # False = selecting difficulty
         self.name_active = True
+        self.max_length = 12
 
-        # -----------------------------
         # Difficulty
-        # -----------------------------
-
         self.difficulties = [
             "Explorer",
             "Scholar",
@@ -63,69 +48,47 @@ class NewAdventureState(State):
 
         self.selected = 0
 
-        # -----------------------------
-        # Begin Button
-        # -----------------------------
-
+        # UI Rectangles
         self.name_box = pygame.Rect(
-            330,
-            265,
-            620,
+            340,
+            250,
+            600,
             55
         )
 
         self.button_rect = pygame.Rect(
-            330,
-            265,
-            620,
-            55
+            470,
+            650,
+            340,
+            60
         )
 
-        self.hover_button = False
-
-    # =====================================
-    # Events
-    # =====================================
+    # ====================================
+    # EVENTS
+    # ====================================
 
     def handle_events(self, events):
 
-        mouse = pygame.mouse.get_pos()
-
-        self.hover_button = self.button_rect.collidepoint(mouse)
-
         for event in events:
 
-            # --------------------------
-            # Quit
-            # --------------------------
-
             if event.type == pygame.QUIT:
-
                 self.game.running = False
-
-            # --------------------------
-            # Mouse
-            # --------------------------
 
             elif event.type == pygame.MOUSEBUTTONDOWN:
 
-                mouse = pygame.mouse.get_pos()
-
-                if self.name_box.collidepoint(mouse):
+                if self.name_box.collidepoint(event.pos):
                     self.name_active = True
-                elif self.button_rect.collidepoint(mouse):
-                    print("Hero:", self.hero_name)
-                    print("Difficulty:", self.difficulties[self.selected])
 
-            # --------------------------
-            # Keyboard
-            # --------------------------
+                elif self.button_rect.collidepoint(event.pos):
+
+                    self.game.change_state(
+        CharacterSelectState(self.game)
+    )
 
             elif event.type == pygame.KEYDOWN:
 
-                # ESC
-
                 if event.key == pygame.K_ESCAPE:
+
                     from src.states.menu_state import MenuState
 
                     self.game.change_state(
@@ -134,72 +97,77 @@ class NewAdventureState(State):
 
                     return
 
-                # ----------------------
-                # Typing Hero Name
-                # ----------------------
+                # -------------------
+                # Typing Name
+                # -------------------
 
                 if self.name_active:
 
                     if event.key == pygame.K_BACKSPACE:
+
                         self.hero_name = self.hero_name[:-1]
 
                     elif event.key == pygame.K_RETURN:
+
                         self.name_active = False
 
                     else:
+
                         if (
                             event.unicode.isprintable()
-                            and len(self.hero_name)
-                            < self.max_name_length
+                            and len(self.hero_name) < self.max_length
                         ):
+
                             self.hero_name += event.unicode
 
-                # ----------------------
-                # Difficulty Mode
-                # ----------------------
+                # -------------------
+                # Difficulty
+                # -------------------
 
                 else:
 
                     if event.key == pygame.K_UP:
+
                         self.selected -= 1
 
                         if self.selected < 0:
-                            self.selected = len(self.difficulties) - 1
+                            self.selected = 2
 
                     elif event.key == pygame.K_DOWN:
+
                         self.selected += 1
 
-                        if self.selected >= len(self.difficulties):
+                        if self.selected > 2:
                             self.selected = 0
 
                     elif event.key == pygame.K_TAB:
-                        self.name_active = not self.name_active
+
+                        self.name_active = True
 
                     elif event.key == pygame.K_RETURN:
-                        print("Hero:", self.hero_name)
-                        print(
-                            "Difficulty:",
-                            self.difficulties[self.selected]
-                        )
 
-    # =====================================
-    # Update
-    # =====================================
+                        self.game.change_state(
+        CharacterSelectState(self.game)
+    )
+
+    # ====================================
+    # UPDATE
+    # ====================================
 
     def update(self, dt):
 
         self.background.update(dt)
-            # =====================================
-    # Draw
-    # =====================================
+            # ====================================
+    # DRAW
+    # ====================================
 
     def draw(self, screen):
 
         self.background.draw(screen)
 
-        # ----------------------------
+        # ---------------------------
         # Title
-        # ----------------------------
+        # ---------------------------
 
         title = self.title_font.render(
             "New Adventure",
@@ -213,32 +181,32 @@ class NewAdventureState(State):
         )
 
         subtitle = self.text_font.render(
-            "Prepare your hero before beginning the journey.",
+            "Create your hero and begin your journey.",
             True,
-            (225, 225, 225)
+            (220, 220, 220)
         )
 
         screen.blit(
             subtitle,
-            subtitle.get_rect(center=(640, 140))
+            subtitle.get_rect(center=(640, 130))
         )
 
-        # ==================================
+        # ---------------------------
         # Main Panel
-        # ==================================
+        # ---------------------------
 
         panel = pygame.Rect(
             280,
-            180,
+            170,
             720,
-            500
+            560
         )
 
         pygame.draw.rect(
             screen,
-            (22, 28, 45),
+            (25, 30, 48),
             panel,
-            border_radius=18
+            border_radius=15
         )
 
         pygame.draw.rect(
@@ -246,12 +214,12 @@ class NewAdventureState(State):
             (255, 220, 80),
             panel,
             2,
-            border_radius=18
+            border_radius=15
         )
 
-        # ==================================
+        # ---------------------------
         # Hero Name
-        # ==================================
+        # ---------------------------
 
         heading = self.heading_font.render(
             "Hero Name",
@@ -259,81 +227,81 @@ class NewAdventureState(State):
             (255, 220, 80)
         )
 
-        screen.blit(heading, (330, 220))
-
-        input_box = self.name_box
-
-        pygame.draw.rect(
-            screen,
-            (35, 40, 60),
-            input_box,
-            border_radius=10
+        screen.blit(
+            heading,
+            (340, 210)
         )
 
         border = (
             (255, 220, 80)
             if self.name_active
             else
-            (160, 160, 160)
+            (150, 150, 150)
+        )
+
+        pygame.draw.rect(
+            screen,
+            (40, 45, 65),
+            self.name_box,
+            border_radius=10
         )
 
         pygame.draw.rect(
             screen,
             border,
-            input_box,
+            self.name_box,
             2,
             border_radius=10
         )
 
         display = self.hero_name
 
+        if display == "":
+            display = "Enter Hero Name"
+
         if self.name_active:
-            if (pygame.time.get_ticks() // 450) % 2 == 0:
+
+            if (pygame.time.get_ticks() // 500) % 2 == 0:
                 display += "|"
 
-        if display == "":
-            display = "Enter your name..."
-
-        name_surface = self.text_font.render(
+        name = self.text_font.render(
             display,
             True,
             (255, 255, 255)
         )
 
         screen.blit(
-            name_surface,
-            (350, 280)
+            name,
+            (360, 267)
         )
 
-        # ==================================
+        # ---------------------------
         # Difficulty
-        # ==================================
+        # ---------------------------
 
-        diff_heading = self.heading_font.render(
+        heading = self.heading_font.render(
             "Difficulty",
             True,
             (255, 220, 80)
         )
 
-        screen.blit(diff_heading, (330, 360))
+        screen.blit(
+            heading,
+            (340, 340)
+        )
 
-        start_y = 410
+        start_y = 390
 
         for i, difficulty in enumerate(self.difficulties):
 
             rect = pygame.Rect(
-                330,
+                340,
                 start_y + i * 70,
-                620,
+                600,
                 55
             )
 
-            selected = (
-                i == self.selected
-                and not self.name_active
-            )
-
-            if selected:
+            if i == self.selected:
 
                 pygame.draw.rect(
                     screen,
@@ -342,13 +310,13 @@ class NewAdventureState(State):
                     border_radius=10
                 )
 
-                text_color = (20, 20, 20)
+                color = (20, 20, 20)
 
             else:
 
                 pygame.draw.rect(
                     screen,
-                    (35, 40, 60),
+                    (40, 45, 65),
                     rect,
                     border_radius=10
                 )
@@ -361,29 +329,29 @@ class NewAdventureState(State):
                     border_radius=10
                 )
 
-                text_color = (255, 255, 255)
+                color = (255, 255, 255)
 
-            txt = self.text_font.render(
+            text = self.text_font.render(
                 difficulty,
                 True,
-                text_color
+                color
             )
 
             screen.blit(
-                txt,
-                txt.get_rect(center=rect.center)
+                text,
+                text.get_rect(center=rect.center)
             )
 
-        # ==================================
-        # Begin Journey Button
-        # ==================================
+        # ---------------------------
+        # Begin Button
+        # ---------------------------
 
-        button_color = (
-            (255, 235, 120)
-            if self.hover_button
-            else
-            (255, 220, 80)
-        )
+        mouse = pygame.mouse.get_pos()
+
+        if self.button_rect.collidepoint(mouse):
+            button_color = (255, 235, 120)
+        else:
+            button_color = (255, 220, 80)
 
         pygame.draw.rect(
             screen,
@@ -392,44 +360,40 @@ class NewAdventureState(State):
             border_radius=12
         )
 
-        button_text = self.heading_font.render(
+        button = self.heading_font.render(
             "BEGIN JOURNEY",
             True,
             (20, 20, 20)
         )
 
         screen.blit(
-            button_text,
-            button_text.get_rect(
+            button,
+            button.get_rect(
                 center=self.button_rect.center
             )
         )
 
-        # ==================================
-        # Controls
-        # ==================================
+        # ---------------------------
+        # Help Text
+        # ---------------------------
 
         if self.name_active:
 
-            help_text = (
-                "Type your name • ENTER = Continue"
-            )
+            help_text = "Type Name • ENTER = Save Name"
 
         else:
 
-            help_text = (
-                "↑ ↓ Change Difficulty • TAB = Edit Name • ENTER = Begin"
-            )
+            help_text = "↑ ↓ Change Difficulty • TAB = Edit Name"
 
-        controls = self.small_font.render(
+        help_surface = self.text_font.render(
             help_text,
             True,
             (180, 180, 180)
         )
 
         screen.blit(
-            controls,
-            controls.get_rect(
-                center=(640, 730)
+            help_surface,
+            help_surface.get_rect(
+                center=(640, 760)
             )
         )
