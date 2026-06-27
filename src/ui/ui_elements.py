@@ -55,7 +55,7 @@ class Button:
         if self.is_hovered:
             # Pulsing hover size glow
             self.glow_time += dt * 5.0
-            self.scale_factor = 1.0 + 0.03 * abs(pygame.math.sin(self.glow_time))
+            self.scale_factor = 1.0 + 0.03 * abs(math.sin(self.glow_time))
         else:
             self.glow_time = 0
             self.scale_factor = 1.0
@@ -222,7 +222,7 @@ class TextBox:
                 self.active = False
             else:
                 # Add text char if within bounds
-                if len(self.text) < self.max_chars and event.unicode.isalnum() or event.unicode == ' ':
+                if len(self.text) < self.max_chars and (event.unicode.isalnum() or event.unicode == " "):
                     self.text += event.unicode
             return True
             
