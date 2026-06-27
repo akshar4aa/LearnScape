@@ -1,9 +1,0 @@
-Traceback (most recent call last):
-  File "D:\LearnScape\main.py", line 11, in main
-    game.run()
-  File "D:\LearnScape\src\engine\game.py", line 199, in run
-    self.active_state.draw(self.virtual_canvas)
-  File "D:\LearnScape\src\states\shop.py", line 224, in draw
-    eq_status = "Equipped" if (inv_item and inv_item["equipped"]) else "Unequipped" if (inv_item and is_equippable) else "Consumable"
-                                                                                                     ^^^^^^^^^^^^^
-NameError: name 'is_equippable' is not defined
