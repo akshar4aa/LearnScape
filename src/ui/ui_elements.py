@@ -1,4 +1,5 @@
 import pygame
+import math
 from src.utils.helpers import get_font, draw_rounded_panel, draw_gradient_rect, draw_glowing_text
 
 class Button:
