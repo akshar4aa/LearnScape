@@ -77,7 +77,7 @@ class SplashState(State):
         
         # Draw Subtitle "An Educational RPG Adventure"
         sub_text = "An Educational RPG Adventure"
-        sub_surf = self.font.subtitle.render(sub_text, True, (160, 150, 180))
+        sub_surf = self.font_subtitle.render(sub_text, True, (160, 150, 180))
         sx = (self.game.virtual_width - sub_surf.get_width()) // 2
         sy = ly + lt_surf.get_height() + 15
         surface.blit(sub_surf, (sx, sy))
