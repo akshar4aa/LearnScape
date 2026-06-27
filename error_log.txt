@@ -1,11 +1,17 @@
 Traceback (most recent call last):
   File "D:\LearnScape\main.py", line 11, in main
     game.run()
-  File "D:\LearnScape\src\engine\game.py", line 194, in run
-    self.active_state.update(dt)
-  File "D:\LearnScape\src\states\menu.py", line 120, in update
-    btn.update(dt, mouse_pos)
-  File "D:\LearnScape\src\ui\ui_elements.py", line 57, in update
-    self.scale_factor = 1.0 + 0.03 * abs(pygame.math.sin(self.glow_time))
-                                         ^^^^^^^^^^^^^^^
-AttributeError: module 'pygame.math' has no attribute 'sin'
+  File "D:\LearnScape\src\engine\game.py", line 192, in run
+    self.update_transition(dt)
+  File "D:\LearnScape\src\engine\game.py", line 230, in update_transition
+    self.set_state(self.transition_to)
+  File "D:\LearnScape\src\engine\game.py", line 127, in set_state
+    self.active_state.enter()
+  File "D:\LearnScape\src\states\explore.py", line 79, in enter
+    self.set_active_kingdom(self.active_kingdom)
+  File "D:\LearnScape\src\states\explore.py", line 47, in set_active_kingdom
+    self.generate_map()
+  File "D:\LearnScape\src\states\explore.py", line 232, in generate_map
+    k_lvl = self.progression_order.index(self.active_kingdom) + 1
+            ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ExploreState' object has no attribute 'progression_order'
