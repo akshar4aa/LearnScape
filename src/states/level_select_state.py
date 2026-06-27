@@ -101,10 +101,15 @@ class LevelSelectState(State):
 
                 elif event.key == pygame.K_RETURN:
 
-                    print(
-                        "Starting:",
+                    from src.states.lesson_state import LessonState
+
+                    self.game.change_state(
+                        LessonState(
+                        self.game,
+                        self.kingdom,
                         self.levels[self.selected]
                     )
+                )
 
                     # Next page will be LessonState
 
