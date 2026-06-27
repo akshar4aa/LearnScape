@@ -25,30 +25,35 @@ class WorldMapState(State):
             24
         )
 
+        from src.ui.planet import Planet
+
         self.kingdoms = [
 
-            {
-                "name": "Math Kingdom",
-                "x": 240,
-                "y": 260
-            },
+    Planet(
+        220,
+        450,
+        "assets/planets/earth.png",
+        "Earth"
+    ),
 
-            {
-                "name": "Science Lab",
-                "x": 640,
-                "y": 180
-            },
+    Planet(
+        640,
+        280,
+        "assets/planets/jupiter.png",
+        "Jupiter"
+    ),
 
-            {
-                "name": "Coding Castle",
-                "x": 980,
-                "y": 360
-            }
+    Planet(
+        1080,
+        460,
+        "assets/planets/saturn.png",
+        "Saturn"
+    )
 
-        ]
+]
 
         self.selected = 0
-            # =====================================
+    # =====================================
     # EVENTS
     # =====================================
 
@@ -72,10 +77,14 @@ class WorldMapState(State):
 
                 elif event.key == pygame.K_RETURN:
 
-                    print(
-                        "Entering",
-                        self.kingdoms[self.selected]["name"]
+                    from src.states.kingdom_state import KingdomState
+
+                    self.game.change_state(
+                        KingdomState(
+                        self.game,
+                        self.kingdoms[self.selected].name
                     )
+                )
 
                 elif event.key == pygame.K_ESCAPE:
 
@@ -92,6 +101,8 @@ class WorldMapState(State):
     def update(self, dt):
 
         self.background.update(dt)
+        for planet in self.kingdoms:
+            planet.update(dt)
 
     # =====================================
     # DRAW
@@ -112,40 +123,26 @@ class WorldMapState(State):
             title.get_rect(center=(640,70))
         )
 
-        for i, kingdom in enumerate(self.kingdoms):
+        # Draw paths first
+        pygame.draw.lines(
+    screen,
+    (120,120,170),
+    False,
+    [
+        (220,450),
+        (640,280),
+        (1080,450)
+    ],
+    6
+)
 
-            color = (
-                (255,220,80)
-                if i == self.selected
-                else
-                (120,180,255)
-            )
+# Draw planets
+        for i, planet in enumerate(self.kingdoms):
 
-            pygame.draw.circle(
-                screen,
-                color,
-                (
-                    kingdom["x"],
-                    kingdom["y"]
-                ),
-                35
-            )
-
-            text = self.text_font.render(
-                kingdom["name"],
-                True,
-                (255,255,255)
-            )
-
-            screen.blit(
-                text,
-                text.get_rect(
-                    center=(
-                        kingdom["x"],
-                        kingdom["y"]+60
-                    )
-                )
-            )
+            planet.draw(
+        screen,
+        i == self.selected
+    )
 
         hint = self.text_font.render(
             "← → Select Kingdom    ENTER Explore",
