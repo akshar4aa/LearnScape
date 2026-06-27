@@ -3,8 +3,8 @@ import pygame
 from src.engine.settings import *
 from src.states.splash_state import SplashState
 
-class Game:
 
+class Game:
     def __init__(self):
         pygame.init()
 
@@ -12,10 +12,12 @@ class Game:
         pygame.display.set_caption(TITLE)
 
         self.clock = pygame.time.Clock()
-
         self.running = True
 
-        self.state = SplashState(self)
+        self.current_state = SplashState(self)
+
+    def change_state(self, new_state):
+        self.current_state = new_state
 
     def run(self):
 
@@ -29,12 +31,12 @@ class Game:
                 if event.type == pygame.QUIT:
                     self.running = False
 
-            self.state.handle_events(events)
-            self.state.update(dt)
+            self.current_state.handle_events(events)
+            self.current_state.update(dt)
 
             self.screen.fill(BACKGROUND_COLOR)
 
-            self.state.draw(self.screen)
+            self.current_state.draw(self.screen)
 
             pygame.display.flip()
 
